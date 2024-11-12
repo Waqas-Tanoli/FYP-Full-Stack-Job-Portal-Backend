@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apply_jobs",
+  "info": {
+    "singularName": "apply-job",
+    "pluralName": "apply-jobs",
+    "displayName": "applications",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "applicationDate": {
+      "type": "datetime"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ]
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job"
+    },
+    "JobId": {
+      "type": "string"
+    }
+  }
+}
